@@ -71,6 +71,19 @@ class Humanoid extends CharacterStats {
     return `${this.name} offers a greeting in ${this.language}`;
   }
 }
+
+class Hero extends Humanoid {
+  constructor(attributes) {
+    super(attributes);
+  }
+  removeHp() {
+    this.healthPoints--;
+    return this.healthPoints > 0
+      ? console.log(`${this.name} lost health. HP: ${this.healthPoints}`)
+      : this.destroy();
+  }
+}
+
 const mage = new Humanoid({
   createdAt: new Date(),
   dimensions: {
@@ -127,7 +140,7 @@ const villain = new Humanoid({
   language: ["Common Tongue", "Hidden"]
 });
 
-const hero = new Humanoid({
+const bestFriend = new Hero({
   createdAt: new Date(),
   dimensions: {
     length: 2,
@@ -150,3 +163,21 @@ console.log(mage.name); // Cam
 console.log(swordsman.team); // The Round Table
 console.log(mage.weapons); // Staff of Shamalama
 console.log(archer.language); // Elvish
+bestFriend.removeHp();
+bestFriend.removeHp();
+bestFriend.removeHp();
+bestFriend.removeHp();
+bestFriend.removeHp();
+bestFriend.removeHp();
+bestFriend.removeHp();
+bestFriend.removeHp();
+bestFriend.removeHp();
+bestFriend.removeHp();
+bestFriend.removeHp();
+bestFriend.removeHp();
+bestFriend.removeHp();
+bestFriend.removeHp();
+bestFriend.removeHp();
+bestFriend.removeHp();
+bestFriend.removeHp();
+bestFriend.removeHp();
